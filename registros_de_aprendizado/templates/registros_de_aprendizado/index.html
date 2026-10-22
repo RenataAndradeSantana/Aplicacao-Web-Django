@@ -1,0 +1,15 @@
+{% extends "registros_de_aprendizado/base.html" %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-white rounded-3 shadow-sm border">
+    <div class="container-fluid py-3">
+        <h1 class="display-5 fw-bold text-primary">Acompanhe seus estudos</h1>
+        <p class="col-md-8 fs-4 text-secondary">
+            O Registro de Aprendizado ajuda você a organizar seus tópicos de estudo e documentar o seu progresso diário em um só lugar.
+        </p>
+        <a class="btn btn-primary btn-lg mt-2" href="{% url 'registros_de_aprendizado:topicos' %}" role="button">
+            Ver Tópicos Cadastrados
+        </a>
+    </div>
+</div>
+{% endblock %}
