@@ -29,7 +29,3 @@ Este projeto foi construído com base nos conceitos do livro *Curso Intensivo de
 ### 1. Pré-requisitos
 Certifique-se de ter o Python e o `conda` (ou `venv`) instalados na sua máquina.
 
-### 2. Clonar o Repositório
-```bash
-git clone [https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git](https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git)
-cd NOME_DO_REPOSITORIO
