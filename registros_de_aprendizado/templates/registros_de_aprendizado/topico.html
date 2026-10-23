@@ -1,6 +1,7 @@
 {% extends "registros_de_aprendizado/base.html" %}
 
 {% block content %}
+<!-- Navegação estruturada (Breadcrumb) -->
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{% url 'registros_de_aprendizado:topicos' %}">Tópicos</a></li>
@@ -8,19 +9,47 @@
     </ol>
 </nav>
 
+<!-- Título do Tópico -->
 <div class="border-bottom pb-2 mb-4">
     <h2 class="fw-bold text-primary">{{ topico.texto }}</h2>
 </div>
 
-<h4 class="h5 fw-bold text-secondary mb-3">Anotações</h4>
+<!-- Cabeçalho da seção com o título e os botões de ação do Tópico -->
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="h5 fw-bold text-secondary mb-0">Anotações</h3>
+    
+    <!-- Agrupando os botões no canto direito -->
+    <div class="d-flex gap-2">
+        <a href="{% url 'registros_de_aprendizado:nova_entrada' topico.id %}" class="btn btn-primary btn-sm">
+            + Adicionar Nova Anotação
+        </a>
+        <form action="{% url 'registros_de_aprendizado:deleta_topico' topico.id %}" method="post" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja excluir este tópico e todas as suas anotações?');">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-danger btn-sm">Excluir Tópico</button>
+        </form>
+    </div>
+</div>
 
+<!-- Lista de Anotações -->
 <div class="d-flex flex-column gap-3">
     {% for entrada in entradas %}
         <div class="card shadow-sm border-0">
+            <!-- Cabeçalho do Card com Data e Ações (Editar / Excluir) -->
             <div class="card-header bg-light d-flex justify-content-between align-items-center">
-                <span class="badge bg-secondary">Anotação</span>
                 <small class="text-muted">{{ entrada.data_de_adicao|date:"d/m/Y H:i" }}</small>
+                
+                <!-- Agrupando os botões de ação da anotação -->
+                <div class="d-flex gap-2">
+                    <a href="{% url 'registros_de_aprendizado:edita_entrada' entrada.id %}" class="btn btn-outline-secondary btn-sm">
+                        Editar
+                    </a>
+                    <form action="{% url 'registros_de_aprendizado:deleta_entrada' entrada.id %}" method="post" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja excluir esta anotação?');">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-danger btn-sm">Excluir</button>
+                    </form>
+                </div>
             </div>
+            
             <div class="card-body">
                 <p class="card-text mb-0">{{ entrada.texto|linebreaks }}</p>
             </div>

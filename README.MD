@@ -6,13 +6,23 @@ Este projeto foi construído com base nos conceitos do livro *Curso Intensivo de
 
 ---
 
-## 🚀 Funcionalidades
+### 📚 Gerenciamento de Tópicos
+- **Visualização de Tópicos:** Listagem de todos os assuntos cadastrados com data de criação.
+- **Adicionar Tópico:** Criação de novos assuntos de estudo via formulários validados.
+- **Excluir Tópico:** Remoção de tópicos do banco de dados (com remoção automática de todas as anotações vinculadas e caixa de confirmação no navegador).
 
-- **Página Inicial:** Apresentação da aplicação.
-- **Listagem de Tópicos:** Visualização de todos os assuntos cadastrados no banco de dados.
-- **Detalhes do Tópico:** Exibição das anotações e diários específicos de cada assunto de estudo.
-- **Navegação Dinâmica:** Links diretos utilizando parâmetros de rota (`<int:topico_id>`) e *namespaces*.
+### 📝 Gerenciamento de Anotações (Entradas)
+- **Visualização por Tópico:** Exibição das anotações ordenadas cronologicamente para cada assunto.
+- **Nova Anotação:** Adição de novos registros associados a um tópico específico.
+- **Editar Anotação:** Atualização de conteúdos já cadastrados.
+- **Excluir Anotação:** Remoção individual de anotações com solicitação de confirmação para evitar exclusões acidentais.
 
+---
+
+## 🎨 Interface e Usabilidade
+- **Breadcrumb Navigation:** Trilha de navegação para facilitar o retorno aos tópicos e à página inicial.
+- **Design Responsivo:** Layout estilizado com Bootstrap, contendo cards, botões organizados e agrupados para melhor experiência do usuário.
+- **Mensagens de Confirmação:** Diálogos nativos do navegador (`confirm`) para operações críticas de exclusão.
 ---
 
 ## 🛠️ Tecnologias Utilizadas
@@ -23,9 +33,4 @@ Este projeto foi construído com base nos conceitos do livro *Curso Intensivo de
 - **SQLite** (Banco de dados padrão)
 
 ---
-
-## 💻 Como Rodar o Projeto Localmente
-
-### 1. Pré-requisitos
-Certifique-se de ter o Python e o `conda` (ou `venv`) instalados na sua máquina.
 

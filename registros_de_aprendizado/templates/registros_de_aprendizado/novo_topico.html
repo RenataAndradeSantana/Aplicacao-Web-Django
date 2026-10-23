@@ -1,0 +1,17 @@
+{% extends "registros_de_aprendizado/base.html" %}
+
+{% block content %}
+  <div class="card shadow-sm border-0 p-4">
+    <h2 class="h4 fw-bold mb-3">Adicionar um novo tópico</h2>
+
+    <!-- A tag csrf_token é obrigatória para proteção contra ataques em formulários POST -->
+    <form action="{% url 'registros_de_aprendizado:novo_topico' %}" method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+        {{ form.as_p }}
+      </div>
+      <button name="submit" class="btn btn-primary">Adicionar Tópico</button>
+      <a href="{% url 'registros_de_aprendizado:topicos' %}" class="btn btn-outline-secondary">Cancelar</a>
+    </form>
+  </div>
+{% endblock %}

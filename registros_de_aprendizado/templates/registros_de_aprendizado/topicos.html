@@ -3,6 +3,9 @@
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="h3 fw-bold text-dark mb-0">Tópicos de Estudo</h2>
+    <a href="{% url 'registros_de_aprendizado:novo_topico' %}" class="btn btn-success">
+        + Adicionar Novo Tópico
+    </a>
 </div>
 
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
